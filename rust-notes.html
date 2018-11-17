@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vincent Gay - Curriculum Vitae</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="My RUST notes." />
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: black;
+            max-width: 800px;
+            margin: auto;
+        }
+        pre {
+            margin: 8px;
+        }
+    </style>
+    <link href="prism.css" rel="stylesheet" />
+</head>
+
+<body class="language-rust">
+    <section>
+        <article>
+            <pre>
+                <code>
+                    #[derive(Debug)]
+                    struct MyStruct {
+                        ...
+                    }
+        
+                    let mystruct = MyStruct { ... };
+                    println!("mystruct={:?}", mystruct);
+                </code>
+            </pre>
+        </article>
+        <article>
+            <pre>
+                <code>
+                    fn read_to_string(file_name: &str) -> String {
+                        let err_open = format!("Failed to open {}", &file_name);
+                        let mut file = File::open(file_name).expect(&err_open);
+                        let mut content = String::new();
+                        let err_read = format!("Failed to read {}", &file_name);
+                        file.read_to_string(&mut content).expect(&err_read);
+                        content
+                    }
+                </code>
+            </pre>
+        </article>
+    </section>
+    <section>
+        <article>
+            <pre>
+                <code>
+                </code>
+            </pre>
+        </article>
+    </section>
+    <script src="prism.js"></script>
+</body>
+
+</html>
