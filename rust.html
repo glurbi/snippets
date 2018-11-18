@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <title>Vincent Gay - Curriculum Vitae</title>
+    <title>RUST snippets</title>
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="My RUST notes." />
+    <meta name="description" content="My RUST snippets." />
     <meta charset="UTF-8">
     <style>
         body {
@@ -34,6 +34,9 @@
         <article>
             <pre>
                 <code>
+                    use std::fs::File;
+                    use std::io::prelude::*;
+
                     fn read_to_string(file_name: &str) -> String {
                         let err_open = format!("Failed to open {}", &file_name);
                         let mut file = File::open(file_name).expect(&err_open);
@@ -50,9 +53,30 @@
         <article>
             <pre>
                 <code>
+                    for _ in 0..1000 {
+                        ...
+                    }                    
                 </code>
             </pre>
         </article>
+        <article>
+            <pre>
+                <code>
+                    let mut v: Vec&lt;char> = progs.chars().collect();
+                    let tmp = v[i1];
+                    v[i1] = v[i2];
+                    v[i2] = tmp;
+                    let output: String = v.into_iter().collect();                        
+                </code>
+            </pre>
+        </article>
+        <article>
+            <pre>
+                <code>
+                </code>
+            </pre>
+        </article>
+
     </section>
     <script src="prism.js"></script>
 </body>
