@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="My RUST snippets." />
     <meta charset="UTF-8">
-    <style>
-        body {
-            background-color: black;
-            max-width: 800px;
-            margin: auto;
-        }
-    </style>
     <link href="prism.css" rel="stylesheet" />
+    <link href="common.css" rel="stylesheet" />
 </head>
 
 <body class="language-rust">
+    <h1>RUST</h1>
     <section>
         <article>
+            <h3>Generate the Debug trait for a struct</h3>
+            <p>
+                All fields of the struct must also implement Debug.
+            </p>
             <pre>
                 <code>
                     #[derive(Debug)]
@@ -27,7 +26,8 @@
                     }
         
                     let mystruct = MyStruct { ... };
-                    println!("mystruct={:?}", mystruct);
+                    println!("mystruct={:?}", mystruct); // one line print
+                    println!("mystruct={:#?}", mystruct); // pretty print
                 </code>
             </pre>
         </article>
