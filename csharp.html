@@ -133,7 +133,15 @@
             </p>
             <pre>
                 <code>
-                    Public string Name { get; set; } 
+                    // read/write auto property
+                    public string Name { get; set; } 
+
+                    // read-only auto property - can only be set in the body of the constructor
+                    public string Name { get; }
+
+                    // auto property initializer
+                    public ICollection&lt;string Names { get; } = new List&lt;string>();
+                    public string Name { get; set; } = "UNKNOWN";
                 </code>
             </pre>
         </article>
@@ -196,6 +204,47 @@
 
                     // statement Lambda
                     () => { Console.WriteLine("Hello!"); }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Caller Information</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                    private static void Log(string message, 
+                        [CallerMemberName] string methodName = null, 
+                        [CallerFilePath] string sourceFile = null,
+                        [CallerLineNumber] int lineNumber = 0)
+                    {
+                        Console.WriteLine("({2}:{3}) - {0} - {1}", methodName,
+                                            message, sourceFile, lineNumber);
+                    }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Expression-bodied function member</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                    public string Greetings() => "Hello, World!";
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>using static</h3>
+            <p>
+                Allows to import the static methods of a single class.
+                No need to prefix the method with the class name which makes the code easier to read.
+            </p>
+            <pre>
+                <code>
+                    using static System.Math;
                 </code>
             </pre>
         </article>
