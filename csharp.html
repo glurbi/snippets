@@ -14,7 +14,7 @@
     <h1>C#</h1>
     <section>
         <article>
-            <h3>...</h3>
+            <h3>yield return</h3>
             <p>
                 ...
             </p>
@@ -40,7 +40,7 @@
             </pre>
         </article>
         <article>
-            <h3>...</h3>
+            <h3>Disposable pattern</h3>
             <p>
                 ...
             </p>
@@ -59,12 +59,14 @@
                             GC.SuppressFinalize(this);  
                         }  
                         
-                        protected virtual void Dispose(bool disposing) {  
+                        protected virtual void Dispose(bool disposing)
+                        {  
 
                             if (disposed)
                                 return;
 
-                            if (disposing) {  
+                            if (disposing)
+                            {  
                                 // dispose managed resources
                                 ...
                             }
@@ -83,7 +85,26 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Named and optional parameters</h3>
+            <p>
+                ...                
+            </p>
+            <pre>
+                <code>
+                    public void SomeMethod(string s, double d = 1.0, int i = 0)
+                    {
+                        ...
+                    }
 
+                    SomeMethod("foo");
+                    SomeMethod("foo", 3.33, 10);
+                    SomeMethod("foo", d: 3.33, i: 10);
+                    SomeMethod("foo", i: 10);
+                    SomeMethod("foo", i: 10, d: 3.33);
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
