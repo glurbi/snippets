@@ -232,7 +232,18 @@
             </p>
             <pre>
                 <code>
+                    // expression-bodied method 
                     public string Greetings() => "Hello, World!";
+
+                    // expression-bodied read-only property
+                    public string Name => _name;
+
+                    // expression-bodied read/write property
+                    public string Name
+                    {
+                        get => _name;
+                        set => _name = value;
+                    }
                 </code>
             </pre>
         </article>
@@ -267,6 +278,42 @@
             <pre>
                 <code>
                     var name = customer?.Name ?? "UNKNOWN";
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>String Interpolation</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                        public string FullName => $"{FirstName} {LastName}";
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Indexer</h3>
+            <p>
+                A special type of property that allows a class or structure to be accessed the same way as arrays.
+            </p>
+            <pre>
+                <code>
+                    class StringCollection
+                    {
+                        private string[] strings = new string[10];
+                    
+                        public string this[int index]
+                        {
+                            get => strings[index];
+                            set => strings[index] = value;
+                        }
+                    }
+
+                    ...
+
+                    var coll = new StringCollection();
+                    coll[3] = "Three";
                 </code>
             </pre>
         </article>
