@@ -14,7 +14,7 @@
     <h1>C#</h1>
     <section>
         <article>
-            <h3>yield return</h3>
+            <h3>Yield Return</h3>
             <p>
                 ...
             </p>
@@ -40,7 +40,7 @@
             </pre>
         </article>
         <article>
-            <h3>Disposable pattern</h3>
+            <h3>Disposable Pattern</h3>
             <p>
                 ...
             </p>
@@ -86,9 +86,9 @@
             </pre>
         </article>
         <article>
-            <h3>Named and optional parameters</h3>
+            <h3>Named And Optional Parameters</h3>
             <p>
-                ...                
+                ...
             </p>
             <pre>
                 <code>
@@ -102,6 +102,49 @@
                     SomeMethod("foo", d: 3.33, i: 10);
                     SomeMethod("foo", i: 10);
                     SomeMethod("foo", i: 10, d: 3.33);
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Covariance / Contravariance</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                    // covariance
+                    public interface IEnumerable&lt;out T> : IEnumerable
+                    {
+                        IEnumerator&lt;T> GetEnumerator();
+                    }
+
+                    // contravariance
+                    public interface IComparer&lt;in T>
+                    {
+                        public int Compare(T left, T right);
+                    }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Auto Properties</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                    Public string Name { get; set; } 
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Anonymous Types</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                    var employee = new { Name = ”Foo”, Age = 30 };
                 </code>
             </pre>
         </article>
