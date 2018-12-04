@@ -237,7 +237,7 @@
             </pre>
         </article>
         <article>
-            <h3>using static</h3>
+            <h3>Using Static</h3>
             <p>
                 Allows to import the static methods of a single class.
                 No need to prefix the method with the class name which makes the code easier to read.
@@ -245,6 +245,28 @@
             <pre>
                 <code>
                     using static System.Math;
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Null Conditional Operator</h3>
+            <p>
+                Removes the need to check variables to avoid dereferencing null.
+            </p>
+            <pre>
+                <code>
+                    var name = customer?.Name;
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Null Coalescing Operator</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                    var name = customer?.Name ?? "UNKNOWN";
                 </code>
             </pre>
         </article>
