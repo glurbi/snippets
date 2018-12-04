@@ -148,6 +148,33 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Extension Methods</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                    class Foo
+                    {
+                        int bar;
+                    }
+
+                    static class FooExtensions
+                    {
+                        public static void ExtensionMethod(this Foo foo)
+                        {
+                            Console.WriteLine("Hello from extension method!");
+                        }
+                    }
+
+                    ...
+                    
+                    Foo foo = new ...;
+                    foo.ExtensionMethod();
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
