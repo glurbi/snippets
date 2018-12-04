@@ -169,9 +169,33 @@
                     }
 
                     ...
-                    
+
                     Foo foo = new ...;
                     foo.ExtensionMethod();
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Lambda Expressions</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                    // zero input parameters
+                    () => { ... }
+
+                    // one input parameter
+                    x => x + 1
+                    (x) => x + 1
+                    (int x) => x + 1
+
+                    // two or more input parameters
+                    (x, y) => x + y
+                    (int x, int y) => x + y
+
+                    // statement Lambda
+                    () => { Console.WriteLine("Hello!"); }
                 </code>
             </pre>
         </article>
