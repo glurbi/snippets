@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>C# snippets</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="My C# snippets." />
+    <meta charset="UTF-8">
+    <link href="prism.css" rel="stylesheet" />
+    <link href="common.css" rel="stylesheet" />
+</head>
+
+<body class="language-csharp">
+    <h1>C#</h1>
+    <section>
+        <article>
+            <h3>...</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                    public IEnumerable&lt;int> Fibo(int n)
+                    {
+                        yield return 1;
+                        yield return 1;
+
+                        var f2 = 1;
+                        var f1 = 1;
+
+                        for (int i = 0; i &lt; n; i++)
+                        {
+                            var f0 = f1 + f2;
+                            yield return f0;
+                            f2 = f1;
+                            f1 = f0;
+                        }
+                    }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>...</h3>
+            <p>
+                ...
+            </p>
+            <pre>
+                <code>
+                    public class MyDisposable : IDisposable {  
+
+                        private bool disposed = false;
+
+                        public void Dispose()
+                        {  
+                            Dispose(true);  
+
+                            // takes this object off the finalization queue
+                            // to avoid disposing a second time during finalization
+                            GC.SuppressFinalize(this);  
+                        }  
+                        
+                        protected virtual void Dispose(bool disposing) {  
+
+                            if (disposed)
+                                return;
+
+                            if (disposing) {  
+                                // dispose managed resources
+                                ...
+                            }
+                            
+                            // dispose non managed resources
+                            ...
+
+                            disposed = true;
+                        }
+                        
+                        ~MyResource()
+                        {
+                            Dispose(false);
+                        }                        
+                    }
+                </code>
+            </pre>
+        </article>
+
+    </section>
+    <script src="prism.js"></script>
+</body>
+
+</html>
