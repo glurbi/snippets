@@ -353,6 +353,48 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Collection Initializers</h3>
+            <p>
+                Allows to specify one or more element initializers when creating a collection type that implements IEnumerable and has an Add method with the appropriate signature as an instance method.
+            </p>
+            <pre>
+                <code>
+                    // list initializer
+                    var digits = new List&lt;int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+                    // dictionary initializer
+                    var numbers = new Dictionary&lt;int, string>
+                    {
+                        [1] = "one",
+                        [5] = "five",
+                        [7] = "seven"
+                    }
+
+                    // custom collection
+                    // the Add() method can also be an extension method
+                    class StringCollection : IEnumerable&lt;String>
+                    {
+                        public IEnumerator&lt;string> GetEnumerator() => ...
+                        IEnumerator IEnumerable.GetEnumerator() => ...
+
+                        public Append(String s) { ... }
+                    }
+
+                    public static class StringCollectionExtensions
+                    {
+                        public static Add(this StringCollection sc, String s) => sc.Append(s);
+                    }
+
+                    var coll = new StringCollection
+                    {
+                        "One",
+                        "Two",
+                        "Three"
+                    }
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
