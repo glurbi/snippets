@@ -317,6 +317,42 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Exception Filters</h3>
+            <p>
+                A clause that determines when a given catch should be applied.
+            </p>
+            <pre>
+                <code>
+                    try
+                    {
+                        ...
+                    }
+                    catch (System.Net.Http.HttpRequestException e) when (e.Message.Contains("301"))
+                    {
+                        return "Site Moved";
+                    }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Nameof</h3>
+            <p>
+                The nameof() expression evaluates to the name of the symbol passed in parameter.
+            </p>
+            <pre>
+                <code>
+                    public string DoSomething(string input) 
+                    {
+                        if(input == null) 
+                        {
+                            throw new ArgumentNullException(nameof(input));
+                        }
+                        ...
+                    }
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
