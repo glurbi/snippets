@@ -395,6 +395,55 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>IEquatable&lt;T></h3>
+            <p>
+                Strongly typed Equals(T) method, avoid the overhead of boxing. You still need to override the base class implementations
+                of Equals(Object) and GetHashCode() so that their behavior is consistent with that of Equals(T). Also op_Equality and
+                op_Inequality should be overriden.
+            </p>
+            <pre>
+                <code>
+                    class A : IEquatable&lt;A>
+                    {
+                        public bool Equals(A other)
+                        {
+                            if (other == null)
+                                return false;
+
+                            return ...;
+                        }
+
+                        public override bool Equals(Object o)
+                        {
+                            if (o == null)
+                                return false;
+
+                            A a = o as A;
+                            if (a == null)
+                               return false;
+                            else
+                               return Equals(a);
+                        }
+
+                        public override int GetHashCode()
+                        {
+                            ...
+                        }
+
+                        public static bool operator == (A a1, A a2)
+                        {
+                            ...
+                        }
+
+                        public static bool operator != (A a1, A a2)
+                        {
+                            ...
+                        }
+                    }
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
