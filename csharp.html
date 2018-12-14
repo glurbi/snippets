@@ -512,6 +512,72 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Discards</h3>
+            <p>
+                Discards are supported when deconstructing tuples or user-defined types,
+                when calling methods with out parameters, in a pattern matching operation,
+                ...
+            </p>
+            <pre>
+                <code>
+                    public (int, int, int, int, int) ComputeSomething (...)
+                    {
+                        ...
+                    }
+
+                    var (_, _, i3, i4, _) = ComputeSomething(...);
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Pattern Matching Is Expression</h3>
+            <p>
+                As part of type checking, allows to write a variable initialization.
+            </p>
+            <pre>
+                <code>
+                    public void Function(object o)
+                    {
+                        ...
+                        if (o is int val)
+                            ...
+                        else if (o is IEnumerable&lt;int> coll)
+                            ...
+                        else
+                            ...
+                    }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Pattern Matching Switch Statement</h3>
+            <p>
+            </p>
+            <pre>
+                <code>
+                    public void Function(object o)
+                    {
+                        ...
+                        switch (o)
+                        {
+                            case 0:
+                                ...
+                            case int val:
+                                ...
+                                break;
+                            case IEnumerable&lt;int> coll:
+                                ...
+                                break;
+                            case null:
+                                ...
+                            case default:
+                                ...
+                        }
+                    }
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
