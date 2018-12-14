@@ -444,6 +444,74 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Out Variables</h3>
+            <p>
+                This is the ability to declare a variable right at the point where it is passed as an out argument.
+            </p>
+            <pre>
+                <code>
+                    ...
+                    Int32.TryParse("1234", out int result);
+                    ...
+                    Int32.TryParse("5678", out var result);
+                    ...
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Tuples</h3>
+            <p>
+            </p>
+            <pre>
+                <code>
+                    ...
+                    var letters = ("a", "b");
+                    ...
+                    (string Alpha, string Beta) namedLetters = ("a", "b");
+                    ...
+                    var alphabetStart = (Alpha: "a", Beta: "b");
+                    ...
+                    private static (int Max, int Min) Range(IEnumerable<int> numbers)
+                    {
+                        ...
+                    }
+                    ...
+                    var range = Range(numbers);
+                    ...
+                    (int max, int min) = Range(numbers);
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Deconstruct</h3>
+            <p>
+            </p>
+            <pre>
+                <code>
+                    public class Point
+                    {
+                        public Point(double x, double y)
+                        {
+                            this.X = x;
+                            this.Y = y;
+                        }
+                    
+                        public double X { get; }
+                        public double Y { get; }
+                    
+                        public void Deconstruct(out double x, out double y)
+                        {
+                            x = this.X;
+                            y = this.Y;
+                        }
+                    }
+                    ...
+                    var p = new Point(3.14, 2.71);
+                    (double X, double Y) = p;
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
