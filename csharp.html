@@ -657,6 +657,21 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Throw expressions</h3>
+            <p>
+                Throw can be used both as a statement or an expression.
+            </p>
+            <pre>
+                <code>
+                    public string Name
+                    {
+                        get => name;
+                        set => name = value ?? throw new ArgumentNullException(...);
+                    }
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
