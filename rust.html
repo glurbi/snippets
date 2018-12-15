@@ -73,10 +73,24 @@
         <article>
             <pre>
                 <code>
+                    let text = "foo\r\nbar\n\nbaz\n";
+                    let mut lines = text.lines();
                 </code>
             </pre>
         </article>
-
+        <article>
+            <h3>String Matching</h3>
+            <pre>
+                <code>
+                    let s = String::from("foobar")
+                    
+                    match &s[0..3] {
+                        "foo" => ...,
+                        _ => ...,
+                    }
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
