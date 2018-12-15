@@ -635,6 +635,28 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Local Functions</h3>
+            <p>
+                It is allowed to declare a function inside the context of another function.
+            </p>
+            <pre>
+                <code>
+                    public IEnumerable&lt;int> Something()
+                    {
+                        ...
+
+                        return SomethingLocal();
+
+                        IEnumerable&lt;int> SomethingLocal()
+                        {
+                            for (var i = 0; i &lt; 10; i++)
+                                yield return i;
+                        }
+                    }
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
