@@ -689,6 +689,46 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Access Modifiers</h3>
+            <p>
+                <ul>
+                    <li><p><b>public</b></p> The type or member can be accessed by any other code in the same assembly or another assembly that references it.</li>
+                    <li><p><b>private</b></p> The type or member can only be accessed by code in the same class or struct.</li>
+                    <li><p><b>protected</b></p> The type or member can only be accessed by code in the same class or a class that is derived from that class.</li>
+                    <li><p><b>internal</b></p> The type or member can only be accessed by code in the same assembly, but not from another assembly.</li>
+                    <li><p><b>protected internal</b></p> The type or member can be accessed by code in the same assembly, or from within a derived class in another assembly.</li>
+                    <li><p><b>private protected</b></p> The type or member can be accessed by code in the same class, or in a type that is derived from that class.</li>
+                </ul>
+            </p>
+            <pre>
+                <code>
+                    // the default access for everything is the biggest restriction
+
+                    // so the following code
+                    namespace A
+                    {
+                        class Foo
+                        {
+                            void Bar() {}
+
+                            class Baz {}
+                        }
+                    }
+
+                    // is equivalent to
+                    namespace A
+                    {
+                        internal class Foo
+                        {
+                            private void Bar() {}
+
+                            private class Baz {}
+                        }
+                    }
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
