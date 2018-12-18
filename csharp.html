@@ -293,9 +293,9 @@
             </pre>
         </article>
         <article>
-            <h3>Indexer</h3>
+            <h3>Indexers</h3>
             <p>
-                A special type of property that allows a class or structure to be accessed the same way as arrays.
+                An indexer is a special type of property that allows a class or structure to be accessed the same way as arrays.
             </p>
             <pre>
                 <code>
@@ -724,6 +724,33 @@
                             private void Bar() {}
 
                             private class Baz {}
+                        }
+                    }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Multidimensional Indexers</h3>
+            <p>
+            </p>
+            <pre>
+                <code>
+                    class MultiDimensionalIndexer
+                    {
+                        ...
+
+                        public int this[int dim1, string dim2]
+                        {
+                            get
+                            {
+                                return ...;
+            
+                            }
+            
+                            set
+                            {
+                                ... = value;
+                            }
                         }
                     }
                 </code>
