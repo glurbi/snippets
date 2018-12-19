@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GIT snippets</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="My GIT snippets." />
+    <meta charset="UTF-8">
+    <link href="prism.css" rel="stylesheet" />
+    <link href="common.css" rel="stylesheet" />
+</head>
+
+<body class="language-shell">
+    <h1>GIT</h1>
+    <section>
+        <article>
+            <h3>Configuration Parameters</h3>
+            <p>
+            </p>
+            <pre>
+                <code>
+                    # list the global configuration parameters
+                    git config --list --global
+
+                    # list the repository specific configuration parameters
+                    git config --list --local
+
+                    # set the user email associated with the repository
+                    git config user.email "foo@bar.com"
+
+                    # set the user email globally
+                    git config --global user.email "foo@bar.com"
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Branch Management</h3>
+            <p>
+            </p>
+            <pre>
+                <code>
+                    # list all branches, local and remote
+                    git branch --local
+
+                    # create a branch and set it as the current working branch
+                    git checkout -b &lt;branch_name>
+
+                    # which is a shorthand for
+                    git branch &lt;branch_name>
+                    git checkout &lt;branch_name>
+
+                    # delete local branch if it has been fully merge with its upstream branch
+                    git branch --delete &lt;branch_name>
+                    git branch -d &lt;branch_name>
+
+                    # delete local branch irrespectively of its merged status
+                    git branch --delete --force &lt;branch_name>
+                    git branch -D &lt;branch_name>
+
+                    # delete remote branch
+                    git push &lt;remote_name> --delete &lt;branch_name>
+                    git push &lt;remote_name> -d &lt;branch_name>
+                </code>
+            </pre>
+        </article>
+    </section>
+    <script src="prism.js"></script>
+</body>
+
+</html>
