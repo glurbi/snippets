@@ -60,6 +60,13 @@
                     # delete remote branch
                     git push &lt;remote_name> --delete &lt;branch_name>
                     git push &lt;remote_name> -d &lt;branch_name>
+
+                    # before fetching, remove any remote-tracking references that no longer exist on the remote
+                    git fetch --prune
+                    git fetch --all --prune
+
+                    # gives details about local branches, in particular the upstream branch
+                    git branch -vv
                 </code>
             </pre>
         </article>
