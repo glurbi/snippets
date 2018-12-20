@@ -760,6 +760,7 @@
             <h3>IEqualityComparer&lt;T></h3>
             <p>
                 Allows the implementation of customized equality comparison for collections.
+                <br/><br/>
                 Can be used when constructing a Dictionary&lt;T>, HashSet&lt;T>, ..., or
                 in some LINQ methods like Distinct, Intersect, ...
             </p>
@@ -779,6 +780,32 @@
 
                         public int GetHashCode(Foo f)
                         {
+                            ...
+                        }
+                    }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>IComparer&lt;T></h3>
+            <p>
+                Allows the implementation of customized sort order for collections.
+            </p>
+            <pre>
+                <code>
+                    class Foo
+                    {
+                        ...
+                    }
+
+                    class FooComparer : IComparer&lt;Foo>
+                    {
+                        public int Compare(Foo f1, Foo f2)
+                        {
+                            // &lt; 0 => f1 is less than f2
+                            // = 0 => f1 equals f2
+                            // > 0 => f1 is greater than f2
+                            
                             ...
                         }
                     }
