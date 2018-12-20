@@ -756,6 +756,35 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>IEqualityComparer&lt;T></h3>
+            <p>
+                Allows the implementation of customized equality comparison for collections.
+                Can be used when constructing a Dictionary&lt;T>, HashSet&lt;T>, ..., or
+                in some LINQ methods like Distinct, Intersect, ...
+            </p>
+            <pre>
+                <code>
+                    class Foo
+                    {
+                        ...
+                    }
+
+                    class FooEqualityComparer : IEqualityComparer&lt;Foo>
+                    {
+                        public bool Equals(Foo f1, Fo f2)
+                        {
+                            ...
+                        }
+
+                        public int GetHashCode(Foo f)
+                        {
+                            ...
+                        }
+                    }
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
