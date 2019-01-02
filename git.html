@@ -70,6 +70,36 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Undo the last commit when it has not been pushed yet.</h3>
+            <p>
+            </p>
+            <pre>
+                <code>
+                    # the commit changes are reset back to unstaged/untracked changes
+                    # this is the safest!
+                    git reset HEAD~
+
+                    # the commit will be lost when executing this:
+                    # this is DANGEROUS and can result in LOSS OF WORK!
+                    git reset --hard HEAD^
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>.gitignore folder wildcards</h3>
+            <p>
+            </p>
+            <pre>
+                <code>
+                    # match precisely one level of directory
+                    /*/bin
+
+                    # match any level of subdirectories
+                    /**/bin
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
