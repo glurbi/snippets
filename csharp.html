@@ -812,6 +812,33 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Verbatim String Literal</h3>
+            <p>
+            </p>
+            <pre>
+                <code>
+                    string filename1 = @"c:\documents\files\u0066.txt";
+                    string filename2 = "c:\\documents\\files\\u0066.txt";
+
+                    Console.WriteLine(filename1 == filename2); // true
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Multiline String Literal</h3>
+            <p>
+            </p>
+            <pre>
+                <code>
+                    string s = @"this
+                    is
+                    a
+                    multiline
+                    string";
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
