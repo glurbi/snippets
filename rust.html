@@ -91,6 +91,63 @@
                 </code>
             </pre>
         </article>
+        <article>
+            <h3>Unrecoverable Errors</h3>
+            <p>panic! ...prints an error message, unwinds and cleans up the stack, then quits</p>
+            <pre>
+                <code>
+                    fn main() {
+                        panic!("crash and burn");
+                    }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Recoverable Errors</h3>
+            <p>using Result&lt;T, E></p>
+            <pre>
+                <code>
+                    let f = File::open("hello.txt");
+
+                    let f = match f {
+                        Ok(file) => file,
+                        Err(error) => match error.kind() {
+                            ErrorKind::NotFound => match File::create("hello.txt") {
+                                Ok(created_file) => created_file,
+                                Err(e) => panic!("Tried to create file but there was a problem: {:?}", e),
+                            },
+                            other_error => panic!("There was a problem opening the file: {:?}", other_error),
+                        },
+                    };
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Propagating Errors</h3>
+            <p>using Result&lt;T, E></p>
+            <pre>
+                <code>
+                    fn read_username_from_file() -> Result<String, io::Error> {
+                        let mut f = File::open("hello.txt")?;
+                        let mut s = String::new();
+                        f.read_to_string(&mut s)?;
+                        Ok(s)
+                    }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>Main Method Returning Error</h3>
+            <p>using Result&lt;T, E></p>
+            <pre>
+                <code>
+                    fn main() -> Result&lt;(), Box<dyn Error>> {
+                        let f = File::open("hello.txt")?;
+                        Ok(())
+                    }
+                </code>
+            </pre>
+        </article>
     </section>
     <script src="prism.js"></script>
 </body>
